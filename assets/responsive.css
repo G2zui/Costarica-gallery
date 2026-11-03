@@ -1,0 +1,314 @@
+/* Base styles: Mobile first */
+.language-ar .en-text {
+    display: none !important;
+}
+
+.language-en header nav .ar-text:not(.auto-translated),
+.language-en header #mobileMenu .ar-text:not(.auto-translated) {
+    display: none !important;
+}
+
+.language-en header nav .en-text,
+.language-en header #mobileMenu .en-text {
+    display: inline-block !important;
+}
+
+.language-en header #mobileMenu .en-text {
+    display: block !important;
+}
+
+#languageToggle,
+#themeToggle {
+    min-height: 44px;
+}
+
+header nav,
+header #mobileMenu {
+    flex-wrap: wrap;
+}
+:root {
+    --page-gutter: clamp(0.75rem, 3vw, 2rem);
+    --touch-size: 44px;
+}
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+html[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="ltr"] {
+    direction: ltr;
+    text-align: left;
+}
+
+html.language-en body,
+html.language-en input,
+html.language-en textarea,
+html.language-en select,
+html.language-en button {
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    min-width: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+main,
+section,
+header,
+footer,
+article,
+form {
+    min-width: 0;
+}
+
+img,
+video,
+canvas,
+svg {
+    max-width: 100%;
+}
+
+img,
+video {
+    height: auto;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+    touch-action: manipulation;
+}
+
+button,
+a[href],
+label {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button,
+input[type="button"],
+input[type="submit"] {
+    min-height: var(--touch-size);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    min-height: var(--touch-size);
+    font-size: 16px;
+}
+
+.max-w-7xl,
+.max-w-6xl,
+.max-w-5xl,
+.max-w-4xl,
+.max-w-3xl,
+.max-w-2xl {
+    width: 100%;
+}
+
+header nav.hidden,
+header nav {
+    min-width: 0;
+}
+
+/* Shared navigation header: brand and controls remain in separate groups. */
+header.sticky > div:first-child {
+    gap: clamp(0.5rem, 2vw, 1rem);
+}
+
+header.sticky a.group {
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+header.sticky a.group img {
+    width: clamp(2.75rem, 12vw, 4rem);
+    height: clamp(2.75rem, 12vw, 4rem);
+}
+
+header.sticky a.group > div {
+    min-width: 0;
+}
+
+header.sticky a.group h1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+}
+
+header.sticky > div:first-child > div.flex.items-center.gap-4,
+header.sticky > div:first-child > div.flex.items-center {
+    flex: 0 0 auto;
+    gap: clamp(0.25rem, 1vw, 0.5rem);
+}
+
+header #languageToggle,
+header #themeToggle,
+header button[onclick="toggleCartDrawer()"],
+header button[onclick="toggleMobileMenu()"] {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header #themeToggle span {
+    display: none;
+}
+
+#cartDrawerContent,
+.fixed > .absolute:last-child,
+[id$="Modal"] > div {
+    max-width: calc(100vw - 1rem);
+}
+
+#cartDrawerContent {
+    width: min(100vw, 28rem);
+}
+
+#productGrid,
+#customizeGrid,
+[id*="Grid"] {
+    min-width: 0;
+}
+
+/* Tablet: 768px and above */
+@media (min-width: 768px) {
+    :root {
+        --page-gutter: clamp(1rem, 4vw, 3rem);
+    }
+
+    #cartDrawerContent {
+        width: min(92vw, 28rem);
+    }
+
+    input,
+    select,
+    textarea {
+        font-size: 1rem;
+    }
+}
+
+/* Desktop: 1024px and above */
+@media (min-width: 1024px) {
+    :root {
+        --page-gutter: clamp(2rem, 5vw, 4rem);
+    }
+
+    #cartDrawerContent {
+        width: 28rem;
+    }
+}
+
+/* Small phones: 480px and below */
+@media (max-width: 480px) {
+    header.sticky > div:first-child {
+        height: 4.75rem;
+        padding-inline: 0.75rem;
+    }
+
+    header.sticky a.group {
+        gap: 0.35rem;
+    }
+
+    header.sticky a.group h1 {
+        font-size: clamp(0.86rem, 4vw, 1rem);
+        max-width: 8.5rem;
+    }
+
+    header.sticky a.group p {
+        display: none;
+    }
+
+    header #languageToggle,
+    header #themeToggle,
+    header button[onclick="toggleCartDrawer()"],
+    header button[onclick="toggleMobileMenu()"] {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+    }
+
+    header #languageToggle {
+        font-size: 0.7rem;
+    }
+    header {
+        padding-inline: var(--page-gutter);
+    }
+
+    header .h-20 {
+        height: 4.75rem;
+    }
+
+    header h1 {
+        font-size: clamp(1rem, 4.7vw, 1.25rem);
+    }
+
+    section {
+        padding-inline: var(--page-gutter);
+    }
+
+    .px-4,
+    .px-5,
+    .px-6,
+    .px-8 {
+        padding-inline: var(--page-gutter);
+    }
+
+    .gap-8 {
+        gap: 0.75rem;
+    }
+
+    .gap-4 {
+        gap: 0.5rem;
+    }
+
+    button,
+    .rounded-full[class*="p-2"] {
+        min-height: 44px;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 11vw, 3rem);
+        line-height: 1.15;
+    }
+
+    h2 {
+        font-size: clamp(1.6rem, 8vw, 2.35rem);
+        line-height: 1.25;
+    }
+
+    #productGrid {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}

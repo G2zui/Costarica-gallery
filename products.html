@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Costarica || gallery</title>
+    <link rel="icon" type="image/png" href="Logo/costarica-logo-transparent.png">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/site-preferences.css">
+    <link rel="stylesheet" href="assets/responsive.css">
+    <script src="assets/translations.js"></script>
+    <script src="assets/site-preferences.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBeige: '#C4B295',
+                        deepBeige: '#D5C2A5',
+                        lightBeige: '#EBE1D3',
+                        darkBrown: '#362922',
+                        accentBrown: '#4A3B32',
+                    },
+                    fontFamily: {
+                        arabic: ['Cairo', 'sans-serif'],
+                        english: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Cairo', 'Inter', sans-serif;
+            background-color: #D5C2A5;
+            color: #362922;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #C4B295;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #362922;
+            border-radius: 4px;
+        }
+        img {
+            transition: transform 300ms ease, filter 300ms ease;
+        }
+        img:hover {
+            transform: scale(1.03);
+            filter: brightness(1.05);
+        }
+    </style>
+</head>
+<body class="bg-deepBeige text-darkBrown antialiased min-h-screen flex flex-col transition-all duration-300">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-darkBrown text-lightBeige text-xs py-2 px-4 text-center font-medium">
+        <span class="ar-text">✨ توصيل لجميع أنحاء مصر | خصومات حصرية على البرواز والقلائد المصنوعة خصيصاً لك ✨</span>
+        
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-deepBeige/95 backdrop-blur-md border-b border-darkBrown/20 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="Logo/costarica-logo-transparent.png" alt="CostaRica Gallery logo" class="w-16 h-16 object-contain shrink-0 drop-shadow-sm group-hover:scale-105 transition-transform" />
+                <div>
+                    <h1 class="text-xl sm:text-2xl font-bold tracking-wider text-darkBrown">Costarica || gallery</h1>
+                    <p class="text-xs text-accentBrown/80 ar-text">جاليري الفن والهدايا المميزة</p>
+                    
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 font-semibold text-darkBrown">
+                <a href="index.html" class="hover:text-accentBrown transition-colors ar-text">الرئيسية</a>
+                
+
+                <a href="products.html" class="hover:text-accentBrown transition-colors ar-text">المنتجات</a>
+                
+
+                <a href="customize.html" class="hover:text-accentBrown transition-colors ar-text">صمم هديتك</a>
+                
+
+                <a href="gallery.html" class="hover:text-accentBrown transition-colors ar-text">الخصوصية والسياسات</a>
+                <a href="gallery.html" class="hover:text-accentBrown transition-colors en-text hidden">Privacy & Policies</a>
+
+                <a href="contact.html" class="hover:text-accentBrown transition-colors ar-text">تواصل معنا</a>
+                <a href="contact.html" class="hover:text-accentBrown transition-colors en-text hidden">Contact Us</a>
+            </nav>
+
+            <!-- Actions: Language Switcher & Cart & Mobile Menu Button -->
+            <div class="flex items-center gap-4">
+                <!-- Cart Button -->
+                <button onclick="toggleCartDrawer()" class="relative p-2.5 rounded-full bg-darkBrown text-lightBeige hover:bg-accentBrown transition-all shadow-md">
+                    <i class="fa-solid fa-cart-shopping text-lg"></i>
+                    <span id="cartBadge" class="absolute -top-1 -right-1 bg-red-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold hidden">0</span>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-darkBrown hover:text-accentBrown">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-lightBeige border-b border-darkBrown/20 px-4 py-4 space-y-3">
+            <a href="index.html" onclick="toggleMobileMenu()" class="block text-darkBrown font-medium ar-text">الرئيسية</a>
+            <a href="index.html" onclick="toggleMobileMenu()" class="block text-darkBrown font-medium en-text hidden">Home</a>
+            
+            <a href="products.html" onclick="toggleMobileMenu()" class="block text-darkBrown font-medium ar-text">المنتجات</a>
+            <a href="products.html" onclick="toggleMobileMenu()" class="block text-darkBrown font-medium en-text hidden">Products</a>
+            
+            <a href="customize.html" onclick="toggleMobileMenu()" class="block text-darkBrown font-medium ar-text">صمم هديتك</a>
+            <a href="customize.html" onclick="toggleMobileMenu()" class="block text-darkBrown font-medium en-text hidden">Customize a Gift</a>
+            
+            <a href="contact.html" onclick="toggleMobileMenu()" class="block text-darkBrown font-medium ar-text">تواصل معنا</a>
+            <a href="contact.html" onclick="toggleMobileMenu()" class="block text-darkBrown font-medium en-text hidden">Contact Us</a>
+            <a href="gallery.html" onclick="toggleMobileMenu()" class="block text-darkBrown font-medium ar-text">الخصوصية والسياسات</a>
+            <a href="gallery.html" onclick="toggleMobileMenu()" class="block text-darkBrown font-medium en-text hidden">Privacy & Policies</a>
+            
+        </div>
+    </header>
+
+    <!-- Products & Categories Section -->
+    <section id="products" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+            <h2 class="text-3xl sm:text-4xl font-bold text-darkBrown">
+                <span class="ar-text">منتجاتنا المميزة</span>
+                
+            </h2>
+            <p class="text-darkBrown/80 text-sm sm:text-base ar-text">اختر القسم المناسب وتصفح تشكيلتنا الفريدة من الهدايا والقطع الفنية</p>
+            
+        </div>
+
+        <!-- Category Filter Tabs / Select Option -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10 bg-lightBeige/60 p-4 rounded-2xl border border-darkBrown/20 shadow-inner">
+            <div class="flex items-center gap-2 w-full sm:w-auto">
+                <label for="categorySelect" class="font-bold text-darkBrown whitespace-nowrap text-sm">
+                    <span class="ar-text">تصنيف المنتجات:</span>
+                    
+                </label>
+                <select id="categorySelect" onchange="filterProducts(this.value)" class="w-full sm:w-64 bg-deepBeige text-darkBrown border border-darkBrown/30 rounded-xl px-4 py-2.5 font-medium focus:outline-none focus:ring-2 focus:ring-darkBrown">
+                    <option value="all" data-ar="جميع المنتجات" data-en="All Products">جميع المنتجات</option>
+                    <option value="customize" data-ar="التخصيص" data-en="Customize">التخصيص</option>
+                    <option value="boxgift" data-ar="بوكس هدايا" data-en="Box Gift">بوكس هدايا</option>
+                    <option value="mugs" data-ar="مجات الشرب" data-en="Mugs">مجات الشرب</option>
+                    <option value="bundle" data-ar="الباندل" data-en="Bundle">الباندل</option>
+                </select>
+            </div>
+            <div id="deliveryPriceBox" class="hidden rounded-xl border border-darkBrown/20 bg-deepBeige/60 p-3">
+                <div class="flex justify-between text-sm font-bold text-darkBrown">
+                    <span class="ar-text">سعر التوصيل</span>
+                    <span id="checkoutDeliveryFee">0 EGP</span>
+                </div>
+                <div class="flex justify-between text-sm font-bold text-darkBrown mt-2 pt-2 border-t border-darkBrown/20">
+                    <span>الإجمالي النهائي:</span>
+                    <span id="checkoutFinalTotal">0 EGP</span>
+                </div>
+            </div>
+            
+            <div class="text-sm text-darkBrown/80 font-medium">
+                <span class="ar-text">عرض منتجات مختارة بعناية</span>
+                
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Product cards will be injected by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Shopping Cart Slide-out Drawer -->
+    <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <div class="absolute inset-0 bg-darkBrown/50 backdrop-blur-sm transition-opacity" onclick="toggleCartDrawer()"></div>
+        <div id="cartDrawerContent" class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-lightBeige shadow-2xl flex flex-col border-r border-darkBrown/20">
+                <!-- Cart Header -->
+                <div class="p-6 bg-deepBeige border-b border-darkBrown/20 flex items-center justify-between">
+                    <h3 class="text-lg font-bold text-darkBrown flex items-center gap-2">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="ar-text">سله التسوق</span>
+                        
+                    </h3>
+                    <button onclick="toggleCartDrawer()" class="p-2 text-darkBrown hover:bg-darkBrown/10 rounded-full transition-colors">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Cart Items List -->
+                <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-6 space-y-4 divide-y divide-darkBrown/10">
+                    <!-- Populated dynamically -->
+                </div>
+
+                <!-- Cart Footer & Checkout -->
+                <div class="p-6 bg-deepBeige border-t border-darkBrown/25 space-y-4">
+                    <div class="space-y-2 text-sm text-darkBrown">
+                        <div class="flex justify-between"><span>إجمالي المنتجات:</span><span id="cartSubtotalPrice">0 EGP</span></div>
+                        <div class="flex justify-between"><span>مصاريف الشحن:</span><span id="cartDeliveryFee">0 EGP</span></div>
+                        <div class="flex justify-between items-center text-lg font-extrabold border-t border-darkBrown/20 pt-2">
+                            <span>الإجمالي النهائي:</span><span id="cartTotalPrice">0 EGP</span>
+                        </div>
+                    </div>
+                    <button onclick="openCheckoutModal()" class="w-full py-3.5 rounded-xl bg-darkBrown text-lightBeige font-bold hover:bg-accentBrown shadow-md transition-all text-center block">
+                        <span class="ar-text">إتمام الشراء</span>
+                        
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-darkBrown/60 backdrop-blur-sm hidden">
+        <div class="bg-lightBeige rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-darkBrown/30 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold text-darkBrown">
+                    <span class="ar-text">إتمام عملية الشراء</span>
+                    
+                </h3>
+                <button onclick="closeCheckoutModal()" class="text-darkBrown hover:text-accentBrown">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+
+            <form id="checkoutForm" onsubmit="completeCheckout(event)" class="space-y-4">
+                <div>
+                    <label class="block font-bold text-darkBrown mb-1 text-sm ar-text">الاسم الكامل</label>
+                    
+                    <input type="text" id="chkName" required class="w-full bg-deepBeige/50 border border-darkBrown/30 rounded-xl px-4 py-2.5 text-darkBrown focus:outline-none focus:ring-2 focus:ring-darkBrown">
+                </div>
+                <div>
+                    <label class="block font-bold text-darkBrown mb-1 text-sm ar-text">رقم الهاتف</label>
+                    
+                    <input type="tel" id="chkPhone" required class="w-full bg-deepBeige/50 border border-darkBrown/30 rounded-xl px-4 py-2.5 text-darkBrown focus:outline-none focus:ring-2 focus:ring-darkBrown">
+                </div>
+                <div>
+                    <label for="chkGovernorate" class="block font-bold text-darkBrown mb-1 text-sm ar-text">المحافظة</label>
+                    
+                    <select id="chkGovernorate" onchange="updateDeliveryFee(this)" required class="w-full bg-deepBeige/50 border border-darkBrown/30 rounded-xl px-4 py-2.5 text-darkBrown focus:outline-none focus:ring-2 focus:ring-darkBrown">
+                        <option value="" disabled selected>اختر المحافظة / Select governorate</option>
+                        <option value="الإسكندرية" data-price="90">الإسكندرية - 90 جنيه</option>
+                        <option value="القاهرة" data-price="100">القاهرة - 100 جنيه</option>
+                        <option value="الجيزة" data-price="110">الجيزة - 110 جنيه</option>
+                        <option value="الدقهلية" data-price="110">الدقهلية - 110 جنيه</option>
+                        <option value="البحر الأحمر" data-price="140">البحر الأحمر - 140 جنيه</option>
+                        <option value="البحيرة" data-price="110">البحيرة - 110 جنيه</option>
+                        <option value="الفيوم" data-price="140">الفيوم - 140 جنيه</option>
+                        <option value="الغربية" data-price="110">الغربية - 110 جنيه</option>
+                        <option value="الإسماعيلية" data-price="110">الإسماعيلية - 110 جنيه</option>
+                        <option value="المنوفية" data-price="110">المنوفية - 110 جنيه</option>
+                        <option value="المنيا" data-price="140">المنيا - 140 جنيه</option>
+                        <option value="القليوبية" data-price="110">القليوبية - 110 جنيه</option>
+                        <option value="الوادي الجديد" data-price="140">الوادي الجديد - 140 جنيه</option>
+                        <option value="الشرقية" data-price="110">الشرقية - 110 جنيه</option>
+                        <option value="السويس" data-price="110">السويس - 110 جنيه</option>
+                        <option value="أسوان" data-price="140">أسوان - 140 جنيه</option>
+                        <option value="أسيوط" data-price="140">أسيوط - 140 جنيه</option>
+                        <option value="بني سويف" data-price="140">بني سويف - 140 جنيه</option>
+                        <option value="بورسعيد" data-price="110">بورسعيد - 110 جنيه</option>
+                        <option value="دمياط" data-price="110">دمياط - 110 جنيه</option>
+                        <option value="كفر الشيخ" data-price="110">كفر الشيخ - 110 جنيه</option>
+                        <option value="مطروح" data-price="110">مطروح - 110 جنيه</option>
+                        <option value="الأقصر" data-price="140">الأقصر - 140 جنيه</option>
+                        <option value="قنا" data-price="140">قنا - 140 جنيه</option>
+                        <option value="شمال سيناء" data-price="110">شمال سيناء - 110 جنيه</option>
+                        <option value="جنوب سيناء" data-price="110">جنوب سيناء - 110 جنيه</option>
+                        <option value="سوهاج" data-price="140">سوهاج - 140 جنيه</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-bold text-darkBrown mb-1 text-sm ar-text">عنوان التوصيل بالتفصيل</label>
+                    
+                    <textarea id="chkAddress" rows="2" required class="w-full bg-deepBeige/50 border border-darkBrown/30 rounded-xl px-4 py-2.5 text-darkBrown focus:outline-none focus:ring-2 focus:ring-darkBrown"></textarea>
+                </div>
+                <div>
+                    <label class="block font-bold text-darkBrown mb-1 text-sm ar-text">طريقة الدفع</label>
+                    
+                    <select class="w-full bg-deepBeige/50 border border-darkBrown/30 rounded-xl px-4 py-2.5 text-darkBrown focus:outline-none focus:ring-2 focus:ring-darkBrown">
+                        <option class="ar-text">الدفع عند الاستلام (Cash on Delivery)</option>
+                        
+                    </select>
+                </div>
+                <div id="deliveryPriceBox" class="hidden rounded-xl border border-darkBrown/20 bg-deepBeige/60 p-3 space-y-2">
+                    <div class="flex justify-between text-sm font-bold text-darkBrown">
+                        <span>مصاريف الشحن:</span>
+                        <span id="checkoutDeliveryFee">0 EGP</span>
+                    </div>
+                    <div class="flex justify-between text-sm font-bold text-darkBrown pt-2 border-t border-darkBrown/20">
+                        <span>الإجمالي النهائي:</span>
+                        <span id="checkoutFinalTotal">0 EGP</span>
+                    </div>
+                </div>
+                <div class="pt-4">
+                    <button type="submit" class="w-full py-3.5 rounded-xl bg-darkBrown text-lightBeige font-bold hover:bg-accentBrown shadow-lg transition-all">
+                        <span class="ar-text">تأكيد الطلب ودفع</span>
+                        
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Thank You Modal -->
+    <div id="thankYouModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-darkBrown/70 backdrop-blur-sm hidden">
+        <div class="bg-lightBeige rounded-3xl max-w-md w-full p-8 text-center shadow-2xl border-2 border-darkBrown space-y-6">
+            <div class="w-20 h-20 bg-darkBrown text-lightBeige rounded-full flex items-center justify-center mx-auto text-3xl shadow-lg">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-2xl font-extrabold text-darkBrown">
+                    <span class="ar-text">شكرا لاستخدامكم costarica gallery</span>
+                    
+                </h3>
+                <p class="text-darkBrown/80 text-sm ar-text">تم استلام طلبكم بنجاح وسنقوم بالتواصل معكم قريباً لتأكيد التفاصيل.</p>
+                
+            </div>
+            <button onclick="closeThankYouModal()" class="w-full py-3.5 rounded-xl bg-darkBrown text-lightBeige font-bold hover:bg-accentBrown transition-all shadow-md">
+                <span class="ar-text">العودة للرئيسية</span>
+                
+            </button>
+        </div>
+    </div>
+
+    <!-- Product Image Zoom Modal -->
+    <div id="productImageModal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4 bg-darkBrown/90 backdrop-blur-sm" onclick="closeProductImageModal()">
+        <button type="button" onclick="closeProductImageModal()" class="absolute top-5 right-5 w-11 h-11 rounded-full bg-lightBeige text-darkBrown shadow-lg flex items-center justify-center text-xl hover:bg-white" aria-label="Close enlarged image">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img id="enlargedProductImage" src="" alt="Enlarged product" class="max-w-[92vw] max-h-[88vh] object-contain rounded-xl shadow-2xl" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- Footer & Social Links -->
+    <footer id="footer" class="bg-darkBrown text-lightBeige mt-auto pt-16 pb-12 border-t border-accentBrown">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-lightBeige/10">
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold tracking-wider">Costarica || gallery</h3>
+                    <p class="text-xs text-lightBeige/80 ar-text leading-relaxed">
+                        وجهتكم الأولى للفن والهدايا المصنوعة خصيصاً لتناسب أذواقكم الرفيعة. نسعد بخدمتكم وتوفير أجمل القطع الفنية والمخصصة.
+                    </p>
+                        Your premier destination for art and custom gifts tailored to your refined tastes.
+                    </p>
+                </div>
+                
+                <div class="space-y-4">
+                    <h4 class="font-bold text-sm uppercase tracking-wider ar-text">روابط سريعة</h4>
+                    
+                    <ul class="space-y-2 text-sm text-lightBeige/80">
+                        <li><a href="index.html" class="hover:text-white transition-colors ar-text">الرئيسية</a></li>
+                        <li><a href="products.html" class="hover:text-white transition-colors ar-text">المنتجات</a></li>
+                        <li><a href="customize.html" class="hover:text-white transition-colors ar-text">صمم هديتك</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="font-bold text-sm uppercase tracking-wider ar-text">تواصل معنا & السوشيال ميديا</h4>
+                    
+                    <p class="text-sm text-lightBeige/80 flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <a href="https://wa.me/201550907691" target="_blank" class="hover:underline font-mono">01550907691</a>
+                    </p>
+                    <!-- Social Media Icons in Dark Brown / matching dark palette style -->
+                    <div class="flex items-center gap-3 pt-2">
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/share/1CCAAaiKNS/" target="_blank" class="w-10 h-10 rounded-full bg-deepBeige text-darkBrown flex items-center justify-center hover:bg-lightBeige transition-transform hover:scale-110 shadow-md" title="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <!-- TikTok -->
+                        <a href="https://www.tiktok.com/@costarica.gallery2?_r=1&_t=ZS-9AvmQJ1Elle" target="_blank" class="w-10 h-10 rounded-full bg-deepBeige text-darkBrown flex items-center justify-center hover:bg-lightBeige transition-transform hover:scale-110 shadow-md" title="TikTok">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/201550907691" target="_blank" class="w-10 h-10 rounded-full bg-deepBeige text-darkBrown flex items-center justify-center hover:bg-lightBeige transition-transform hover:scale-110 shadow-md" title="WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 text-center text-xs text-lightBeige/60">
+                <span class="ar-text">&copy; 2026 WebDev. جميع الحقوق محفوظة.</span>
+                
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Send contact details to WhatsApp
+        function sendClientDetailsToWhatsApp() {
+            const clientName = document.getElementById('clientName').value.trim();
+            const clientPhone = document.getElementById('clientPhone').value.trim();
+            const clientEmail = document.getElementById('clientEmail').value.trim();
+            const clientMessage = document.getElementById('clientMessage').value.trim();
+
+            if (!clientName || !clientPhone || !clientEmail || !clientMessage) {
+                alert('يرجى إدخال جميع البيانات المطلوبة.');
+                return;
+            }
+
+            const targetWhatsAppNumber = '201550907691';
+            const formattedMessage =
+                '*New Inquiry from Costarica Gallery Website*\n\n' +
+                `👤 *Name:* ${clientName}\n` +
+                `📞 *Phone:* ${clientPhone}\n` +
+                `📧 *Email:* ${clientEmail}\n` +
+                `📝 *Request / Details:*\n${clientMessage}`;
+
+            window.open(`https://wa.me/${targetWhatsAppNumber}?text=${encodeURIComponent(formattedMessage)}`, '_blank', 'noopener');
+        }
+
+        // State Management
+        let cart = [];
+
+        // Delivery prices: edit this list to change shipping fees.
+        const upperEgyptGovernorates = ['بني سويف', 'الفيوم', 'المنيا', 'أسيوط', 'سوهاج', 'قنا', 'الأقصر', 'أسوان', 'الوادي الجديد'];
+        function getDeliveryFee(governorate) {
+            governorate = String(governorate || '').split(' - ')[0].trim();
+            if (governorate === 'القاهرة') return 100;
+            if (governorate === 'الإسكندرية') return 90;
+            if (governorate === 'البحر الأحمر' || upperEgyptGovernorates.includes(governorate)) return 140;
+            return governorate ? 110 : 0;
+        }
+        function getSelectedDelivery() {
+            const select = document.getElementById('chkGovernorate');
+            const option = select.options[select.selectedIndex];
+            return {
+                governorate: select.value,
+                deliveryFee: option ? Number(option.dataset.price || 0) : 0
+            };
+        }
+
+        // Products Data matching user specifications
+        let products = [
+            {
+                id: 1,
+                category: 'customize',
+                nameAr: 'قلادة مخصصة – قابلة للتخصيص، متوفرة بالذهبي والفضي',
+                descEn: 'An elegant necklace designed specifically for you, available in two luxurious colors (gold and silver) with a touch of sophistication.',
+                price: 245,
+                oldPrice: 300,
+                image: 'Necklace/nec1.JPG',
+                images: [
+                    'Necklace/nec1.JPG',
+                    'Necklace/nec2.JPG',
+                    'Necklace/nec3.JPG',
+                    'Necklace/nec4.JPG',
+                    'Necklace/nec5.JPG'
+                ],
+                options: [
+                    { labelAr: 'ذهبي (Gold)', labelEn: 'Gold', value: 'gold' },
+                    { labelAr: 'فضي (Silver)', labelEn: 'Silver', value: 'silver' }
+                ]
+            },
+            {
+                id: 2,
+                category: 'customize',
+                nameAr: 'برواز صور مخصص ✨',
+                descEn: 'An elegant photo frame with multiple designs and sizes to suit every corner of your home.',
+                price: 275, // Default for 30x40
+                oldPrice: null,
+                image: 'Frames/f1.JPG',
+                images: ['Frames/f1.JPG', 'Frames/f2.JPG', 'Frames/f3.JPG ', 'Frames/f4.JPG', ],
+                options: [
+                    { labelAr: 'مقاس 30×40 سم - 275 ج.م', labelEn: '30x40 cm - 275 EGP', value: '30x40', price: 275 },
+                    { labelAr: 'مقاس 40×50 سم - 350 ج.م', labelEn: '40x50 cm - 350 EGP', value: '40x50', price: 350 },
+                    { labelAr: 'مقاس 50×70 سم - 495 ج.م', labelEn: '50x70 cm - 495 EGP', value: '50x70', price: 495 }
+                ]
+            },
+            {
+                id: 7,
+                category: 'customize',
+                nameAr: 'إطار صور LED مخصص مع صورتك وأغنيتك المفضلة. هدية رائعة للذكريات المميزة!',
+                descEn: 'LED photo frame with your photo and favorite song. A wonderful gift for special memories!',
+                price: 300,
+                
+                images: ['Frames/l1.JPG', 'Frames/l2.JPG', 'Frames/l3.JPG ', 'Frames/l4.JPG', 'Frames/l5.JPG', 'Frames/l6.JPG' ],
+                
+            },
+            {
+                id: 8,
+                category: 'customize',
+                nameAr: ' محفظة جلدية أصلية، مع إمكانية النقش المخصص لأي عبارة عند الطلب.',
+                descEn: 'An authentic leather wallet with customizable engraving options for any message.',
+                price: 395,
+                oldPrice: null,
+                images: ['Frames/w1.JPG', 'Frames/w2.JPG', 'Frames/w3.JPG ', 'Frames/w4.JPG',  ],
+                
+            },
+            {
+                id: 9,
+                category: 'customize',
+                nameAr: ' سوار من الفولاذ المقاوم للصدأ مع نقش صورة مخصصة.',
+                descEn: 'A stainless steel bracelet with a customized photo engraving.',
+                price: 260,
+                images: ['Frames/sb1.JPG', 'Frames/sb2.JPG', 'Frames/sb3.JPG ', 'Frames/sb4.JPG',],
+                
+            },
+            {
+                id: 10,
+                category: 'customize',
+                nameAr: 'مج حراري متغير اللون. أضف الماء الساخن لتكشف صورتك المخصصة!',
+                descEn: 'A customizable thermal mug. Add hot water to reveal your customized photo!',
+                price: 120,
+                oldPrice: null,
+                images: ['Frames/mm1.JPG', 'Frames/mm2.JPG', 'Frames/mm3.JPG ',  ],
+                
+            },
+            {
+                id: 11,
+                category: 'customize',
+                nameAr: '  سوار من الفولاذ المقاوم للصدأ مع نقش  .', 
+                descEn: 'A stainless steel bracelet with Arabic script engraving, available in gold and silver.',
+                price: 340,
+                oldPrice: 390,
+                images: ['Frames/bb1.JPG', 'Frames/bb2.JPG', 'Frames/bb3.JPG', 'Frames/bb4.JPG', ],
+                options: [{ labelAr: 'لون فضي', labelEn: 'Silver Colors', value: 'silver' }, { labelAr: 'لون ذهبي', labelEn: 'Gold Colors', value: 'gold' }]
+            },
+            {
+                id: 12,
+                category: 'customize',
+                nameAr: 'مجموعة هدايا سوداء أنيقة!',
+                descEn: 'An elegant black gift set with three mugs and a matching thermos. Custom printing available for names!',
+                price: 420,
+                oldPrice: null,
+                images: ['Frames/bm1.JPG', 'Frames/bm2.JPG', 'Frames/bm3.JPG', 'Frames/bm4.JPG', ],
+                
+            },
+            {
+                id: 13,
+                category: 'customize',
+                nameAr: ' ميدالية  مخصصة مع صورتك واسمك وعبارتك المفضلة.',
+                descEn: 'A unique medal that combines your photo, name, and favorite message.',
+                price: 360,
+                oldPrice: 410,
+                images: ['Frames/k1.JPG', 'Frames/k2.JPG', 'Frames/k3.JPG', 'Frames/k4.JPG',  ],
+            },
+            {
+               
+                id: 0,
+                category: 'customize',
+                nameAr: ' تقويمات الشركات المخصصة! ',
+                descEn: 'Customizable company calendars!.',
+                price: 480,
+                oldPrice: null,
+                images: ['Frames/cc1.jpg'],
+            },
+            {
+                
+                id: 3,
+                category: 'customize',
+                nameAr: 'مجك الخاص مع صورتك المفضلة! ☕',
+                descEn: '  Your photo, your mug!  Customize your own mug with any photo you love. A unique gift made just for you!.',
+                price: 180,
+                oldPrice: null,
+                images: ['Frames/ym1.jpg'],
+            },
+            {
+                id: 4,
+                category: 'boxgift',
+                nameAr: 'صندوق هدايا فاخر متكامل',
+                descEn: 'A luxurious gift box containing the finest items for a memorable present.',
+                price: 450,
+                oldPrice: 520,
+                image: 'https://placehold.co/600x600/C4B295/362922?text=Gift+Box',
+                options: [
+                    { labelAr: 'صندوق كلاسيكي بني', labelEn: 'Classic Brown Box', value: 'brown' },
+                    { labelAr: 'صندوق بيج فاخر', labelEn: 'Luxury Beige Box', value: 'beige' }
+                ]
+            },
+            {
+                id: 5,
+                category: 'bundle',
+                nameAr: 'باندل الهدايا المتكاملة (مج + برواز + قلادة)',
+                descEn: 'A comprehensive gift bundle containing the finest items for a memorable present.',
+                price: 850,
+                oldPrice: 1000,
+                image: 'https://placehold.co/600x600/C4B295/362922?text=Gift+Bundle',
+                options: [
+                    { labelAr: 'مجموعة ذهبية كاملة', labelEn: 'Complete Gold Bundle', value: 'gold_bundle' },
+                    { labelAr: 'مجموعة فضية كاملة', labelEn: 'Complete Silver Bundle', value: 'silver_bundle' }
+                ]
+            },
+            {
+                id: 6,
+                category: 'mugs',
+                nameAr: 'مج حراري للسفر والعمل',
+                descEn: 'حافظ على حرارة مشروبك المفضل طوال اليوم بتصميم فني أنيق.',
+                price: 320,
+                oldPrice: 380,
+                image: 'https://placehold.co/600x600/C4B295/362922?text=Thermal+Mug',
+                options: [
+                    { labelAr: 'ستانلس ستيل', labelEn: 'Stainless Steel', value: 'steel' }
+                ]
+            }
+        ];
+
+        // Initialize App on Load
+        window.onload = async function() {
+            await loadCmsProducts();
+            if (document.getElementById('productGrid')) renderProducts(products);
+            if (document.getElementById('customImages')) setupFileInputListener();
+        };
+
+        async function loadCmsProducts() {
+            try {
+                const response = await fetch('content/products.json', { cache: 'no-store' });
+                if (!response.ok) return;
+                const data = await response.json();
+                if (Array.isArray(data.products) && data.products.length) {
+                    products = data.products;
+                }
+            } catch (error) {
+                console.warn('CMS products could not be loaded; using the built-in catalog.', error);
+            }
+        }
+
+        // Render Products Grid
+        function renderProducts(itemsToRender) {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
+
+            itemsToRender.forEach(prod => {
+                const card = document.createElement('div');
+                card.className = 'bg-lightBeige rounded-3xl overflow-hidden border border-darkBrown/25 shadow-lg flex flex-col justify-between hover:shadow-xl transition-all';
+                
+                let optionsHtml = '';
+                if (prod.options && prod.options.length > 0) {
+                    optionsHtml = `
+                        <div class="mb-4">
+                            <label class="block text-xs font-bold text-darkBrown mb-1 ar-text">اختر المواصفات:</label>
+                            
+                            <select id="opt_${prod.id}" onchange="updatePrice(event, ${prod.id}, ${prod.price})" class="w-full bg-deepBeige/50 border border-darkBrown/30 rounded-xl px-3 py-2 text-sm text-darkBrown focus:outline-none focus:ring-1 focus:ring-darkBrown">
+                                ${prod.options.map(opt => `<option value="${opt.value}" data-price="${opt.price || prod.price}"><span class="ar-text">${opt.labelAr}</span></option>`).join('')}
+                            </select>
+                        </div>
+                    `;
+                }
+
+                const customizationHtml = prod.category === 'customize' ? `
+                    <div class="mb-4 space-y-3 rounded-2xl border border-darkBrown/20 bg-deepBeige/30 p-4">
+                        <label for="customText_${prod.id}" class="block text-xs font-bold text-darkBrown">
+                            <span class="ar-text">اكتب تفاصيل التصميم لهذا المنتج</span>
+                            
+                        </label>
+                        <textarea id="customText_${prod.id}" rows="3" required placeholder="مثال: الاسم، اللون، العبارة..." class="w-full rounded-xl border border-darkBrown/30 bg-lightBeige px-3 py-2 text-sm text-darkBrown placeholder-darkBrown/50 focus:outline-none focus:ring-2 focus:ring-darkBrown"></textarea>
+                        <label for="customFiles_${prod.id}" class="block text-xs font-bold text-darkBrown">
+                            <span class="ar-text">ارفع صور التصميم</span>
+                            
+                        </label>
+                        <input id="customFiles_${prod.id}" type="file" multiple accept="image/*" onchange="showCustomFilesName(${prod.id})" class="block w-full text-xs text-darkBrown file:ml-2 file:rounded-lg file:border-0 file:bg-darkBrown file:px-3 file:py-2 file:text-lightBeige">
+                        <span id="customFilesName_${prod.id}" class="block text-xs text-accentBrown"></span>
+                    </div>
+                ` : '';
+
+                card.innerHTML = `
+                    <div class="relative h-64 overflow-hidden bg-deepBeige">
+                        <img id="mainImage_${prod.id}" src="${prod.images ? prod.images[0] : prod.image}" alt="${prod.nameAr}" onclick="openProductImage(this.src, '${prod.nameAr}')" class="w-full h-full object-cover cursor-zoom-in transform hover:scale-105 transition-transform duration-300">
+                        <a href="product.html?id=${prod.id}" class="absolute left-3 top-3 bg-darkBrown text-lightBeige px-3 py-1.5 rounded-full text-xs font-bold shadow-md hover:bg-accentBrown" title="Open product page"><i class="fa-solid fa-up-right-from-square ml-1"></i> تفاصيل / Details</a>
+                        ${prod.oldPrice ? '<span class="absolute top-3 right-3 bg-red-700 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow">عرض خاص</span>' : ''}
+                        ${(prod.images && prod.images.length > 1) ? `
+                            <button type="button" onclick="changeProductImage(${prod.id}, -1)" aria-label="Previous product image" class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-darkBrown/85 text-lightBeige shadow-md hover:bg-darkBrown"><i class="fa-solid fa-chevron-left text-xs"></i></button>
+                            <button type="button" onclick="changeProductImage(${prod.id}, 1)" aria-label="Next product image" class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-darkBrown/85 text-lightBeige shadow-md hover:bg-darkBrown"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+                        ` : ''}
+                    </div>
+                    ${(prod.images && prod.images.length > 1) ? `
+                        <div class="flex gap-2 px-6 pt-4">
+                            ${prod.images.map((photo, index) => `
+                                <button type="button" onclick="showProductImage(${prod.id}, ${index})" class="w-14 h-14 rounded-xl overflow-hidden border-2 ${index === 0 ? 'border-darkBrown' : 'border-transparent'} hover:border-darkBrown transition-colors" data-thumb-product="${prod.id}" data-thumb-index="${index}">
+                                    <img src="${photo}" alt="${prod.nameAr} photo ${index + 1}" class="w-full h-full object-cover">
+                                </button>
+                            `).join('')}
+                        </div>
+                    ` : ''}
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div class="space-y-2">
+                            <a href="product.html?id=${prod.id}" class="block"><h3 class="font-bold text-lg text-darkBrown hover:text-accentBrown"><span class="ar-text">${prod.nameAr || 'منتج'}</span><span class="en-text hidden">${prod.nameEn || prod.nameAr || 'Product'}</span></h3></a>
+                            <a href="product.html?id=${prod.id}" class="block"></a>
+                            <p class="text-xs text-darkBrown/80"><span class="ar-text">${prod.descAr || ''}</span><span class="en-text hidden">${prod.descEn || prod.descAr || ''}</span></p>
+                            
+                        </div>
+                        
+                        <div>
+                            ${optionsHtml}
+                            ${customizationHtml}
+                            <div class="flex items-baseline justify-between pt-2 border-t border-darkBrown/10">
+                                <div>
+                                    <span id="price_${prod.id}" class="text-xl font-extrabold text-darkBrown">${prod.price} EGP</span>
+                                    ${prod.oldPrice ? `<span class="text-xs text-darkBrown/60 line-through ml-2">${prod.oldPrice} EGP</span>` : ''}
+                                </div>
+                                <button onclick="addToCart(${prod.id})" class="px-4 py-2.5 rounded-xl bg-darkBrown text-lightBeige font-bold hover:bg-accentBrown transition-all shadow-md text-sm flex items-center gap-2">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                    <span class="ar-text">أضف للسلة</span>
+                                    
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Product image gallery
+        const productImageIndexes = {};
+
+        function showProductImage(prodId, imageIndex) {
+            const product = products.find(p => p.id === prodId);
+            if (!product || !product.images || !product.images[imageIndex]) return;
+            productImageIndexes[prodId] = imageIndex;
+            document.getElementById(`mainImage_${prodId}`).src = product.images[imageIndex];
+            document.querySelectorAll(`[data-thumb-product="${prodId}"]`).forEach(thumb => {
+                thumb.classList.toggle('border-darkBrown', Number(thumb.dataset.thumbIndex) === imageIndex);
+                thumb.classList.toggle('border-transparent', Number(thumb.dataset.thumbIndex) !== imageIndex);
+            });
+        }
+
+        function changeProductImage(prodId, direction) {
+            const product = products.find(p => p.id === prodId);
+            if (!product || !product.images) return;
+            const currentIndex = productImageIndexes[prodId] || 0;
+            const nextIndex = (currentIndex + direction + product.images.length) % product.images.length;
+            showProductImage(prodId, nextIndex);
+        }
+
+        function openProductImage(imageSrc, imageAlt) {
+            const modal = document.getElementById('productImageModal');
+            const image = document.getElementById('enlargedProductImage');
+            image.src = imageSrc;
+            image.alt = imageAlt;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeProductImageModal() {
+            const modal = document.getElementById('productImageModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeProductImageModal();
+        });
+
+        // Dynamic price update when select option changes (e.g. Photo frames)
+        function updatePrice(event, prodId, defaultPrice) {
+            const selectEl = event.target;
+            const selectedOption = selectEl.options[selectEl.selectedIndex];
+            const customPrice = selectedOption.getAttribute('data-price');
+            const priceEl = document.getElementById(`price_${prodId}`);
+            if (customPrice) {
+                priceEl.innerText = `${customPrice} EGP`;
+            }
+        }
+
+        // Filter Products by Category
+        function filterProducts(category) {
+            if (category === 'all') {
+                renderProducts(products);
+            } else {
+                const categoryAliases = {
+                    customize: ['customize', 'necklaces', 'frames'],
+                    boxgift: ['boxgift', 'giftboxes'],
+                    bundle: ['bundle', 'bundles']
+                };
+                const matchingCategories = categoryAliases[category] || [category];
+                const filtered = products.filter(p => matchingCategories.includes(p.category));
+                renderProducts(filtered);
+            }
+        }
+
+        // Add to Cart Logic
+        function addToCart(prodId) {
+            const product = products.find(p => p.id === prodId);
+            let selectedOptionText = '';
+            let finalPrice = product.price;
+            let customOptionText = '';
+
+            if (product.category === 'customize') {
+                const customText = document.getElementById(`customText_${prodId}`).value.trim();
+                const customFiles = document.getElementById(`customFiles_${prodId}`).files;
+                if (!customText) {
+                    document.getElementById(`customText_${prodId}`).focus();
+                    alert('يرجى كتابة تفاصيل التصميم.');
+                    return;
+                }
+
+                const fileNames = Array.from(customFiles).map(file => file.name).join(', ');
+                customOptionText = `تفاصيل التصميم: ${customText}${fileNames ? ` | الصور: ${fileNames}` : ''}`;
+            }
+
+            const selectEl = document.getElementById(`opt_${prodId}`);
+            if (selectEl) {
+                const selectedOpt = selectEl.options[selectEl.selectedIndex];
+                selectedOptionText = selectedOpt.text;
+                const customPrice = selectedOpt.getAttribute('data-price');
+                if (customPrice) {
+                    finalPrice = parseInt(customPrice);
+                }
+            }
+
+            const cartItem = {
+                cartId: Date.now() + Math.random(),
+                id: product.id,
+                name: product.nameAr,
+                price: finalPrice,
+                option: customOptionText || selectedOptionText,
+                image: product.images ? product.images[productImageIndexes[product.id] || 0] : product.image,
+                quantity: 1
+            };
+
+            cart.push(cartItem);
+            updateCartBadge();
+            renderCartItems();
+            toggleCartDrawer();
+        }
+
+        function showCustomFilesName(prodId) {
+            const fileInput = document.getElementById(`customFiles_${prodId}`);
+            const fileNames = Array.from(fileInput.files).map(file => file.name).join(', ');
+            document.getElementById(`customFilesName_${prodId}`).textContent = fileNames;
+        }
+
+        // Handle Custom Order Submission (Customization Section)
+        function handleCustomOrder(event) {
+            event.preventDefault();
+            const desc = document.getElementById('customDescription').value;
+            const name = document.getElementById('customName').value;
+            const phone = document.getElementById('customPhone').value;
+            const fileInput = document.getElementById('customImages');
+
+            let filesNames = [];
+            if (fileInput.files.length > 0) {
+                for (let i = 0; i < fileInput.files.length; i++) {
+                    filesNames.push(fileInput.files[i].name);
+                }
+            }
+
+            const customCartItem = {
+                cartId: Date.now(),
+                id: 'custom',
+                name: 'طلب تخصيص خاص: ' + desc.substring(0, 30) + '...',
+                price: 350, // Default estimated custom design price
+                option: `Client: ${name} (${phone}) | Files: ${filesNames.join(', ') || 'No images'}`,
+                image: 'https://placehold.co/600x600/C4B295/362922?text=Custom+Design',
+                quantity: 1
+            };
+
+            cart.push(customCartItem);
+            updateCartBadge();
+            renderCartItems();
+
+            document.getElementById('customOrderForm').reset();
+            document.getElementById('fileUploadNames').innerText = '';
+
+            toggleCartDrawer();
+        }
+
+        // File upload indicator listener
+        function setupFileInputListener() {
+            const fileInput = document.getElementById('customImages');
+            if (fileInput) {
+                fileInput.addEventListener('change', function(e) {
+                    const names = Array.from(e.target.files).map(f => f.name).join(', ');
+                    document.getElementById('fileUploadNames').innerText = names ? `Selected files: ${names}` : '';
+                });
+            }
+        }
+
+        // Cart Drawer Toggle
+        function toggleCartDrawer() {
+            const drawer = document.getElementById('cartDrawer');
+            drawer.classList.toggle('hidden');
+        }
+
+        // Update Cart Badge Counter
+        function updateCartBadge() {
+            const badge = document.getElementById('cartBadge');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            if (totalItems > 0) {
+                badge.innerText = totalItems;
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+        }
+
+        // Render Cart Items Inside Drawer
+        function renderCartItems() {
+            const container = document.getElementById('cartItemsContainer');
+            container.innerHTML = '';
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12 text-darkBrown/60">
+                        <i class="fa-solid fa-cart-shopping text-4xl mb-3"></i>
+                        <p class="ar-text">سلة التسوق فارغة حالياً</p>
+                        
+                    </div>
+                `;
+                document.getElementById('cartTotalPrice').innerText = '0 EGP';
+                document.getElementById('cartSubtotalPrice').innerText = '0 EGP';
+                document.getElementById('cartDeliveryFee').innerText = '0 EGP';
+                return;
+            }
+
+            let totalPrice = 0;
+
+            cart.forEach((item, index) => {
+                totalPrice += item.price * item.quantity;
+                const itemEl = document.createElement('div');
+                itemEl.className = 'flex gap-4 py-4 items-center';
+                itemEl.innerHTML = `
+                    <img src="${item.image}" alt="" class="w-16 h-16 object-cover rounded-xl border border-darkBrown/20">
+                    <div class="flex-1">
+                        <h4 class="font-bold text-sm text-darkBrown">${item.name}</h4>
+                        ${item.option ? `<p class="text-xs text-accentBrown/80">${item.option}</p>` : ''}
+                        <p class="text-sm font-extrabold text-darkBrown mt-1">${item.price} EGP</p>
+                    </div>
+                    <div class="flex flex-col items-end gap-2">
+                        <button onclick="removeFromCart(${index})" class="text-red-700 hover:text-red-900 text-xs">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                        <div class="flex items-center gap-2 bg-deepBeige rounded-lg px-2 py-1 text-xs">
+                            <button onclick="changeQty(${index}, -1)" class="font-bold px-1">-</button>
+                            <span>${item.quantity}</span>
+                            <button onclick="changeQty(${index}, 1)" class="font-bold px-1">+</button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(itemEl);
+            });
+
+            document.getElementById('cartSubtotalPrice').innerText = `${totalPrice} EGP`;
+            updateCartTotals(totalPrice);
+        }
+
+        // Change Item Quantity in Cart
+        function changeQty(index, delta) {
+            cart[index].quantity += delta;
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+            updateCartBadge();
+            renderCartItems();
+        }
+
+        // Remove from Cart
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartBadge();
+            renderCartItems();
+        }
+
+        // Checkout Modal Actions
+        function openCheckoutModal() {
+            if (cart.length === 0) return;
+            toggleCartDrawer();
+            document.getElementById('checkoutModal').classList.remove('hidden');
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkoutModal').classList.add('hidden');
+        }
+
+        // Complete Purchase & Show Thank You Modal
+        function completeCheckout(event) {
+            event.preventDefault();
+            const { governorate, deliveryFee } = getSelectedDelivery();
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            sessionStorage.setItem('costaricaDelivery', JSON.stringify({
+                name: document.getElementById('chkName').value,
+                phone: document.getElementById('chkPhone').value,
+                governorate: governorate,
+                address: document.getElementById('chkAddress').value,
+                deliveryFee: deliveryFee,
+                total: subtotal + deliveryFee
+            }));
+            const customerName = document.getElementById('chkName').value;
+            const customerPhone = document.getElementById('chkPhone').value;
+            const customerAddress = document.getElementById('chkAddress').value;
+            const orderItems = cart.map(item => `- ${item.name} × ${item.quantity} (${item.price * item.quantity} EGP)`).join('\n');
+            const orderMessage =
+                `طلب جديد من Costarica Gallery\n\nالاسم: ${customerName}\nالهاتف: ${customerPhone}\nالمحافظة: ${governorate}\nالعنوان: ${customerAddress}\n\nالمنتجات:\n${orderItems}\n\nإجمالي المنتجات: ${subtotal} EGP\nمصاريف الشحن: ${deliveryFee} EGP\nالإجمالي النهائي: ${subtotal + deliveryFee} EGP\nالدفع عند الاستلام`;
+            window.open(`https://wa.me/201550907691?text=${encodeURIComponent(orderMessage)}`, '_blank', 'noopener');
+            closeCheckoutModal();
+            cart = [];
+            updateCartBadge();
+            renderCartItems();
+            document.getElementById('thankYouModal').classList.remove('hidden');
+        }
+
+        function updateDeliveryFee(governorateSelect) {
+            const governorate = governorateSelect.value;
+            const fee = Number(governorateSelect.selectedOptions[0]?.dataset.price || 0);
+            document.getElementById('checkoutDeliveryFee').innerText = `${fee} EGP`;
+            document.getElementById('deliveryPriceBox').classList.remove('hidden');
+            const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            document.getElementById('checkoutFinalTotal').innerText = `${subtotal + fee} EGP`;
+            updateCartTotals(subtotal, fee);
+        }
+
+        function updateCartTotals(subtotal, deliveryFee) {
+            const selectedDelivery = getSelectedDelivery();
+            const fee = deliveryFee === undefined ? selectedDelivery.deliveryFee : deliveryFee;
+            document.getElementById('cartSubtotalPrice').innerText = `${subtotal} EGP`;
+            document.getElementById('cartDeliveryFee').innerText = `${fee} EGP`;
+            document.getElementById('cartTotalPrice').innerText = `${subtotal + fee} EGP`;
+        }
+
+        function closeThankYouModal() {
+            document.getElementById('thankYouModal').classList.add('hidden');
+        }
+
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

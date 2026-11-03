@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل المنتج | Costarica Gallery</title>
+    <link rel="icon" type="image/png" href="Logo/costarica-logo-transparent.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/site-preferences.css">
+    <link rel="stylesheet" href="assets/responsive.css">
+    <script src="assets/translations.js"></script>
+    <script src="assets/site-preferences.js"></script>
+    <script>tailwind.config={theme:{extend:{colors:{deepBeige:'#D5C2A5',lightBeige:'#EBE1D3',darkBrown:'#362922',accentBrown:'#4A3B32'}}}}</script>
+    <style>body{font-family:'Cairo','Inter',sans-serif;background:#D5C2A5;color:#362922}</style>
+</head>
+<body class="min-h-screen">
+<div class="bg-darkBrown px-4 py-2 text-center text-xs font-medium text-lightBeige">
+    <span class="ar-text">✨ توصيل لجميع أنحاء مصر ✨</span>
+    
+</div>
+<header class="sticky top-0 z-40 bg-deepBeige/95 border-b border-darkBrown/20 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3"><img src="Logo/costarica-logo-transparent.png" alt="Costarica logo" class="h-14 w-14 object-contain"><span class="font-bold text-xl">Costarica Gallery</span></a>
+        <nav class="flex gap-5 text-sm font-bold"><a href="index.html" class="hover:text-accentBrown">الرئيسية / Home</a><a href="gallery.html" class="hover:text-accentBrown">الخصوصية والسياسات</a></nav>
+    </div>
+</header>
+<main class="max-w-6xl mx-auto px-4 py-10 md:py-16">
+    <a href="index.html#products" class="inline-flex items-center gap-2 mb-8 font-bold"><i class="fa-solid fa-arrow-right"></i> العودة للمنتجات / Back to products</a>
+    <section class="grid md:grid-cols-2 gap-8 lg:gap-12 bg-lightBeige rounded-3xl p-5 md:p-8 shadow-xl border border-darkBrown/20">
+        <div>
+            <div class="aspect-square bg-deepBeige rounded-2xl overflow-hidden shadow-md"><img id="mainImage" src="" alt="" class="w-full h-full object-cover"></div>
+            <div id="thumbnails" class="grid grid-cols-6 gap-2 mt-3"></div>
+        </div>
+        <div class="flex flex-col justify-center gap-5">
+            <p id="category" class="text-sm font-bold text-accentBrown"></p>
+            <h1 id="productName" class="text-3xl md:text-4xl font-extrabold"></h1>
+            <p id="productDescription" class="leading-relaxed text-darkBrown/80"></p>
+            <div class="flex items-center gap-3"><strong id="price" class="text-3xl"></strong><span id="oldPrice" class="text-darkBrown/50 line-through"></span></div>
+            <label class="font-bold">اختر اللون / Choose color<select id="color" class="block mt-2 w-full rounded-xl border border-darkBrown/30 bg-deepBeige px-4 py-3"><option>ذهبي / Gold</option><option>فضي / Silver</option><option>حسب الطلب / Custom</option></select></label>
+            <a href="index.html#customize" class="w-full py-4 rounded-2xl bg-darkBrown text-lightBeige text-center font-bold hover:bg-accentBrown transition"><i class="fa-brands fa-whatsapp ms-2"></i> اطلب هذا المنتج / Order this product</a>
+        </div>
+    </section>
+</main>
+<script>
+const fallbackCatalog={
+1:{name:'Stainless Steel Heart Necklace – Customizable',nameAr:'قلادة قلب من الستانلس ستيل قابلة للتخصيص',description:'قلادة قلب أنيقة ومخصصة بتصميم فاخر، متوفرة باللون الذهبي والفضي.',category:'Customize',price:'245 EGP',old:'300 EGP',images:['Necklace/nec1.JPG','Necklace/nec2.JPG','Necklace/nec3.JPG','Necklace/nec4.JPG','Necklace/nec5.JPG','Frames/l1.JPG']},
+2:{name:'Custom Photo Frame',nameAr:'برواز صور مخصص',description:'برواز صور فاخر بتصاميم ومقاسات متعددة تناسب مناسباتك وذكرياتك.',category:'Customize',price:'275 EGP',images:['Frames/l1.JPG','Frames/l2.JPG','Frames/l3.JPG','Frames/l4.JPG','Frames/l5.JPG','Frames/l6.JPG']},
+3:{name:'Custom Art Mug',nameAr:'مج شرب مخصص',description:'مج عالي الجودة بطباعة شخصية ودائمة.',category:'Mugs',price:'180 EGP',old:'220 EGP',images:['Frames/l3.JPG','Frames/l4.JPG','Frames/l5.JPG']},
+4:{name:'Luxury Gift Box',nameAr:'صندوق هدايا فاخر',description:'صندوق هدايا فاخر ومكمل لجميع مناسباتكم.',category:'Box Gift',price:'450 EGP',old:'520 EGP',images:['Frames/l5.JPG','Frames/l6.JPG']},
+5:{name:'Complete Gift Bundle',nameAr:'باندل هدايا متكامل',description:'مجموعة هدايا متكاملة تجمع أجمل قطع Costarica Gallery.',category:'Bundle',price:'850 EGP',old:'1000 EGP',images:['Frames/l1.JPG','Frames/l4.JPG','Frames/l6.JPG']},
+6:{name:'Thermal Travel Mug',nameAr:'مج حراري للسفر',description:'مج حراري أنيق يحافظ على المشروب طوال اليوم.',category:'Mugs',price:'320 EGP',images:['Frames/l2.JPG','Frames/l3.JPG']}
+};
+async function loadCatalog() {
+    try {
+        const response = await fetch('content/products.json', { cache: 'no-store' });
+        if (!response.ok) return fallbackCatalog;
+        const data = await response.json();
+        if (!Array.isArray(data.products)) return fallbackCatalog;
+
+        return Object.fromEntries(data.products.map(item => [item.id, {
+            name: item.nameAr,
+            nameAr: item.nameAr,
+            description: item.descAr || '',
+            descriptionAr: item.descEn || '',
+            category: item.category,
+            price: `${item.price} EGP`,
+            old: item.oldPrice ? `${item.oldPrice} EGP` : '',
+            images: (item.images && item.images.length) ? item.images : (item.image ? [item.image] : [])
+        }]));
+    } catch (error) {
+        console.warn('CMS catalog could not be loaded; using fallback data.', error);
+        return fallbackCatalog;
+    }
+}
+
+async function initializeProduct() {
+    const catalog = await loadCatalog();
+    const id = new URLSearchParams(location.search).get('id') || '1';
+    const product = catalog[id] || Object.values(catalog)[0];
+    document.title = product.name + ' | Costarica Gallery';
+    document.getElementById('mainImage').src = product.images[0] || '';
+    document.getElementById('mainImage').alt = product.name;
+    document.getElementById('productName').textContent = product.nameAr + ' | ' + product.name;
+    document.getElementById('productDescription').textContent = product.description;
+    document.getElementById('category').textContent = product.category;
+    document.getElementById('price').textContent = product.price;
+    document.getElementById('oldPrice').textContent = product.old || '';
+    document.getElementById('thumbnails').innerHTML = product.images.map((src,index) => `<button onclick="selectPhoto('${src}',${index})" class="aspect-square rounded-lg overflow-hidden border-2 border-transparent thumbnail" data-index="${index}"><img src="${src}" alt="Product photo ${index+1}" class="w-full h-full object-cover"></button>`).join('');
+    selectPhoto(product.images[0] || '', 0);
+}
+
+function selectPhoto(src,index) {
+    document.getElementById('mainImage').src = src;
+    document.querySelectorAll('.thumbnail').forEach((el,i) => el.classList.toggle('border-darkBrown', i === index));
+}
+
+initializeProduct();
+</script>
+</body>
+</html>

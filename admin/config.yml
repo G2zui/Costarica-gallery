@@ -1,0 +1,119 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "products"
+    label: "المنتجات"
+    label_singular: "منتج"
+    description: "إضافة وتعديل وحذف جميع منتجات المتجر."
+    format: "json"
+    extension: "json"
+    files:
+      - name: "products_data"
+        label: "قائمة المنتجات والأسعار والصور"
+        file: "content/products.json"
+        fields:
+          - label: "المنتجات"
+            name: "products"
+            widget: "list"
+            summary: "{{fields.nameAr}} - {{fields.price}} جنيه"
+            fields:
+              - { label: "معرّف المنتج", name: "id", widget: "number", value_type: "int" }
+              - label: "القسم"
+                name: "category"
+                widget: "select"
+                options:
+                  - { label: "إطارات", value: "frames" }
+                  - { label: "قلائد", value: "necklaces" }
+                  - { label: "مجّات", value: "mugs" }
+                  - { label: "صناديق هدايا", value: "gift-boxes" }
+                  - { label: "باقة", value: "bundles" }
+                  - { label: "تخصيص", value: "customize" }
+              - { label: "اسم المنتج بالعربية", name: "nameAr", widget: "string" }
+              - { label: "اسم المنتج بالإنجليزية", name: "nameEn", widget: "string", required: false }
+              - { label: "الوصف بالعربية", name: "descAr", widget: "text", required: false }
+              - { label: "الوصف بالإنجليزية", name: "descEn", widget: "text", required: false }
+              - { label: "السعر بالجنيه", name: "price", widget: "number", value_type: "int", min: 0 }
+              - { label: "السعر القديم قبل الخصم", name: "oldPrice", widget: "number", value_type: "int", min: 0, required: false }
+              - { label: "الصورة الرئيسية", name: "image", widget: "image", required: false }
+              - label: "صور المعرض"
+                name: "images"
+                widget: "list"
+                required: false
+                field:
+                  label: "الصورة"
+                  name: "image"
+                  widget: "image"
+              - label: "خيارات المنتج"
+                name: "options"
+                widget: "list"
+                required: false
+                collapsed: true
+                fields:
+                  - { label: "التسمية بالعربية", name: "labelAr", widget: "string" }
+                  - { label: "التسمية بالإنجليزية", name: "labelEn", widget: "string", required: false }
+                  - { label: "القيمة التقنية", name: "value", widget: "string" }
+                  - { label: "سعر إضافي", name: "price", widget: "number", value_type: "int", min: 0, required: false }
+
+  - name: "home_page"
+    label: "الصفحة الرئيسية"
+    description: "النصوص والعناصر الترويجية والصور الظاهرة في الصفحة الرئيسية."
+    format: "json"
+    extension: "json"
+    files:
+      - name: "home"
+        label: "محتوى الصفحة الرئيسية"
+        file: "content/home.json"
+        fields:
+          - { label: "العنوان الرئيسي بالعربية", name: "heroTitleAr", widget: "string" }
+          - { label: "العنوان الرئيسي بالإنجليزية", name: "heroTitleEn", widget: "string", required: false }
+          - { label: "النص التعريفي بالعربية", name: "heroTextAr", widget: "text" }
+          - { label: "النص التعريفي بالإنجليزية", name: "heroTextEn", widget: "text", required: false }
+          - { label: "نص زر الدعوة للإجراء بالعربية", name: "heroButtonAr", widget: "string", required: false }
+          - { label: "نص زر الدعوة للإجراء بالإنجليزية", name: "heroButtonEn", widget: "string", required: false }
+          - { label: "صورة البطل الرئيسية", name: "heroImage", widget: "image" }
+          - label: "صور عرض البطل"
+            name: "heroImages"
+            widget: "list"
+            required: false
+            field:
+              label: "الصورة"
+              name: "image"
+              widget: "image"
+          - { label: "شريط الإعلانات بالعربية", name: "announcementAr", widget: "string" }
+          - { label: "شريط الإعلانات بالإنجليزية", name: "announcementEn", widget: "string", required: false }
+          - { label: "عنوان قسم المنتجات بالعربية", name: "productsTitleAr", widget: "string" }
+          - { label: "عنوان قسم المنتجات بالإنجليزية", name: "productsTitleEn", widget: "string", required: false }
+          - { label: "عنوان العرض الترويجي بالعربية", name: "promotionTitleAr", widget: "string" }
+          - { label: "عنوان العرض الترويجي بالإنجليزية", name: "promotionTitleEn", widget: "string", required: false }
+          - { label: "نص العرض الترويجي بالعربية", name: "promotionTextAr", widget: "text", required: false }
+          - { label: "نص العرض الترويجي بالإنجليزية", name: "promotionTextEn", widget: "text", required: false }
+          - { label: "صورة العرض الترويجي", name: "promotionImage", widget: "image", required: false }
+
+  - name: "site_settings"
+    label: "إعدادات الموقع"
+    description: "بيانات التواصل وروابط التواصل الاجتماعي والإعدادات العامة."
+    format: "json"
+    extension: "json"
+    files:
+      - name: "settings"
+        label: "بيانات التواصل والإعدادات العامة"
+        file: "content/settings.json"
+        fields:
+          - { label: "اسم الموقع", name: "siteName", widget: "string" }
+          - { label: "الشعار النصي بالعربية", name: "siteTaglineAr", widget: "string", required: false }
+          - { label: "الشعار النصي بالإنجليزية", name: "siteTaglineEn", widget: "string", required: false }
+          - { label: "رقم واتساب بالصيغة الدولية", name: "whatsappNumber", widget: "string", hint: "مثال: 201550907691 بدون مسافات أو علامة +" }
+          - { label: "رقم الهاتف الظاهر", name: "phoneDisplay", widget: "string", required: false }
+          - { label: "البريد الإلكتروني", name: "email", widget: "string", required: false }
+          - { label: "رابط فيسبوك", name: "facebookUrl", widget: "string", required: false }
+          - { label: "رابط إنستغرام", name: "instagramUrl", widget: "string", required: false }
+          - { label: "رابط تيك توك", name: "tiktokUrl", widget: "string", required: false }
+          - { label: "عنوان المتجر", name: "addressAr", widget: "string", required: false }
+          - { label: "نص حقوق النشر", name: "copyrightText", widget: "string", required: false }

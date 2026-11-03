@@ -1,0 +1,284 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "category": "customize",
+      "nameAr": "قلادة مخصصة – قابلة للتخصيص، متوفرة بالذهبي والفضي",
+      "nameEn": "Stainless Steel Heart Necklace – Customizable, available in gold & silver. ✨",
+      "descAr": "قلادة أنيقة مصممة خصيصاً لك، متوفرة بلونين فاخرين (الذهبي والفضي) مع لمسة براقة.",
+      "descEn": "Elegant custom necklace available in gold & silver finishes with sparkling details.",
+      "price": 245,
+      "oldPrice": 300,
+      "image": "Necklace/nec1.JPG",
+      "images": [
+        "Necklace/nec1.JPG",
+        "Necklace/nec2.JPG",
+        "Necklace/nec3.JPG",
+        "Necklace/nec4.JPG",
+        "Necklace/nec5.JPG"
+      ],
+      "options": [
+        {
+          "labelAr": "ذهبي (Gold)",
+          "labelEn": "Gold",
+          "value": "gold"
+        },
+        {
+          "labelAr": "فضي (Silver)",
+          "labelEn": "Silver",
+          "value": "silver"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "category": "customize",
+      "nameAr": "برواز صور مخصص ✨",
+      "nameEn": "Custom Photo Frames ✨",
+      "descAr": "برواز صور فني فاخر بتصاميم متعددة ومقاسات تناسب كل زاوية في منزلك.",
+      "descEn": "Luxury custom photo frames in various sizes to fit every corner of your home.",
+      "price": 275,
+      "oldPrice": null,
+      "image": "Frames/f1.JPG",
+      "images": [
+        "Frames/f1.JPG",
+        "Frames/f2.JPG",
+        "Frames/f3.JPG ",
+        "Frames/f4.JPG"
+      ],
+      "options": [
+        {
+          "labelAr": "مقاس 30×40 سم - 275 ج.م",
+          "labelEn": "30x40 cm - 275 EGP",
+          "value": "30x40",
+          "price": 275
+        },
+        {
+          "labelAr": "مقاس 40×50 سم - 350 ج.م",
+          "labelEn": "40x50 cm - 350 EGP",
+          "value": "40x50",
+          "price": 350
+        },
+        {
+          "labelAr": "مقاس 50×70 سم - 495 ج.م",
+          "labelEn": "50x70 cm - 495 EGP",
+          "value": "50x70",
+          "price": 495
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "category": "customize",
+      "nameAr": "إطار صور LED مخصص مع صورتك وأغنيتك المفضلة. هدية رائعة للذكريات المميزة!",
+      "nameEn": "Personalized LED photo frame with your favorite picture and song. A beautiful gift for special memories!",
+      "descAr": "إطار صور LED مخصص مع صورتك وأغنيتك المفضلة. هدية رائعة للذكريات المميزة!",
+      "descEn": "A stylish artwork featuring your chosen name or phrase.",
+      "price": 300,
+      "images": [
+        "Frames/l1.JPG",
+        "Frames/l2.JPG",
+        "Frames/l3.JPG ",
+        "Frames/l4.JPG",
+        "Frames/l5.JPG",
+        "Frames/l6.JPG"
+      ]
+    },
+    {
+      "id": 8,
+      "category": "customize",
+      "nameAr": " محفظة جلدية أصلية، مع إمكانية النقش المخصص لأي عبارة عند الطلب.",
+      "nameEn": "Genuine leather wallet, with custom engraving available for any phrase upon request.",
+      "descAr": " محفظة جلدية أصلية، مع إمكانية النقش المخصص لأي عبارة عند الطلب.",
+      "descEn": "A personalized wall clock for birthdays, memories, and special occasions.",
+      "price": 395,
+      "oldPrice": null,
+      "images": [
+        "Frames/w1.JPG",
+        "Frames/w2.JPG",
+        "Frames/w3.JPG ",
+        "Frames/w4.JPG"
+      ]
+    },
+    {
+      "id": 9,
+      "category": "customize",
+      "nameAr": " سوار من الفولاذ المقاوم للصدأ مع نقش صورة مخصصة.",
+      "nameEn": "Stainless steel bracelet with a personalized photo engraving.",
+      "descAr": "سوار من الفولاذ المقاوم للصدأ مع نقش صورة مخصصة.",
+      "descEn": "A stainless steel bracelet with a personalized photo engraving.",
+      "price": 260,
+      "images": [
+        "Frames/sb1.JPG",
+        "Frames/sb2.JPG",
+        "Frames/sb3.JPG ",
+        "Frames/sb4.JPG"
+      ]
+    },
+    {
+      "id": 10,
+      "category": "customize",
+      "nameAr": "مج حراري متغير اللون. أضف الماء الساخن لتكشف صورتك المخصصة!",
+      "nameEn": "Magic heat-changing mug. Add hot water to reveal your personalized photo!",
+      "descAr": "مج حراري متغير اللون. أضف الماء الساخن لتكشف صورتك المخصصة!",
+      "descEn": "A magic heat-changing mug. Add hot water to reveal your personalized photo!",
+      "price": 120,
+      "oldPrice": null,
+      "images": [
+        "Frames/mm1.JPG",
+        "Frames/mm2.JPG",
+        "Frames/mm3.JPG "
+      ]
+    },
+    {
+      "id": 11,
+      "category": "customize",
+      "nameAr": "  سوار من الفولاذ المقاوم للصدأ مع نقش  .",
+      "nameEn": "Stainless steel Arabic calligraphy bracelet.",
+      "descAr": "سوار من الفولاذ المقاوم للصدأ مع نقش الخط العربي، متوفر بالذهبي والفضي.",
+      "descEn": "A stainless steel bracelet with Arabic and English calligraphy.",
+      "price": 340,
+      "oldPrice": 390,
+      "images": [
+        "Frames/bb1.JPG",
+        "Frames/bb2.JPG",
+        "Frames/bb3.JPG",
+        "Frames/bb4.JPG"
+      ],
+      "options": [
+        {
+          "labelAr": "لون فضي",
+          "labelEn": "Silver Colors",
+          "value": "silver"
+        },
+        {
+          "labelAr": "لون ذهبي",
+          "labelEn": "Gold Colors",
+          "value": "gold"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "category": "customize",
+      "nameAr": "مجموعة هدايا سوداء أنيقة!",
+      "nameEn": " Elegant black gift! ",
+      "descAr": "مجموعة هدايا سوداء أنيقة مع ثلاثة مجات وثرموس مطابق. إمكانية الطباعة المخصصة للأسماء!",
+      "descEn": " Elegant name and date commemorative plaque with a romantic design.",
+      "price": 420,
+      "oldPrice": null,
+      "images": [
+        "Frames/bm1.JPG",
+        "Frames/bm2.JPG",
+        "Frames/bm3.JPG",
+        "Frames/bm4.JPG"
+      ]
+    },
+    {
+      "id": 13,
+      "category": "customize",
+      "nameAr": " ميدالية  مخصصة مع صورتك واسمك وعبارتك المفضلة.",
+      "nameEn": "Customize photo keychain",
+      "descAr": "  ميدالية فريدة تجمع صورتك واسمك وعبارتك المفضلة المختارة.",
+      "descEn": "A unique  board combining your photo, name, and selected phrase.",
+      "price": 360,
+      "oldPrice": 410,
+      "images": [
+        "Frames/k1.JPG",
+        "Frames/k2.JPG",
+        "Frames/k3.JPG",
+        "Frames/k4.JPG"
+      ]
+    },
+    {
+      "id": 0,
+      "category": "customize",
+      "nameAr": " تقويمات الشركات المخصصة! ",
+      "nameEn": "Custom company calendars ! ",
+      "descAr": " تقويمات الشركات المخصصة!.",
+      "descEn": "Custom company calendars with personalized designs and logos. Available in desk and wall styles! .",
+      "price": 480,
+      "oldPrice": null,
+      "images": [
+        "Frames/cc1.jpg"
+      ]
+    },
+    {
+      "id": 3,
+      "category": "customize",
+      "nameAr": "مجك الخاص مع صورتك المفضلة! ☕",
+      "nameEn": "Your Photo, Your Mug! ☕ !",
+      "descAr": "  صورتك، كوبك!  خصص كوبك الخاص بأي صورة تحبها. هدية فريدة مصنوعة خصيصًا لك!.",
+      "descEn": "Your Photo, Your Mug!  Customize your own mug with any photo you love. A unique gift made just for you!",
+      "price": 180,
+      "oldPrice": null,
+      "images": [
+        "Frames/ym1.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "category": "boxgift",
+      "nameAr": "صندوق هدايا فاخر متكامل",
+      "nameEn": "Luxury Gift Box Set",
+      "descAr": "صندوق هدايا مصمم بعناية ليحتوي على أثمن اللحظات والقطع المتاحة.",
+      "descEn": "Carefully crafted gift box designed to hold your most precious items and memories.",
+      "price": 450,
+      "oldPrice": 520,
+      "image": "https://placehold.co/600x600/C4B295/362922?text=Gift+Box",
+      "options": [
+        {
+          "labelAr": "صندوق كلاسيكي بني",
+          "labelEn": "Classic Brown Box",
+          "value": "brown"
+        },
+        {
+          "labelAr": "صندوق بيج فاخر",
+          "labelEn": "Luxury Beige Box",
+          "value": "beige"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "category": "bundle",
+      "nameAr": "باندل الهدايا المتكاملة (مج + برواز + قلادة)",
+      "nameEn": "Complete Gift Bundle (Mug + Frame + Necklace)",
+      "descAr": "باقة هدايا متكاملة ومترابطة تجمع أرقى ما نقدمه في جاليري كوستا ريكا.",
+      "descEn": "An integrated gift bundle combining the finest items from Costarica Gallery.",
+      "price": 850,
+      "oldPrice": 1000,
+      "image": "https://placehold.co/600x600/C4B295/362922?text=Gift+Bundle",
+      "options": [
+        {
+          "labelAr": "مجموعة ذهبية كاملة",
+          "labelEn": "Complete Gold Bundle",
+          "value": "gold_bundle"
+        },
+        {
+          "labelAr": "مجموعة فضية كاملة",
+          "labelEn": "Complete Silver Bundle",
+          "value": "silver_bundle"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "category": "mugs",
+      "nameAr": "مج حراري للسفر والعمل",
+      "nameEn": "Travel Insulated Thermal Mug",
+      "descAr": "حافظ على حرارة مشروبك المفضل طوال اليوم بتصميم فني أنيق.",
+      "descEn": "Keep your favorite drink hot or cold all day with an elegant art design.",
+      "price": 320,
+      "oldPrice": 380,
+      "image": "https://placehold.co/600x600/C4B295/362922?text=Thermal+Mug",
+      "options": [
+        {
+          "labelAr": "ستانلس ستيل",
+          "labelEn": "Stainless Steel",
+          "value": "steel"
+        }
+      ]
+    }
+  ]
+}

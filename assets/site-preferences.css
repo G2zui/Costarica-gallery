@@ -1,0 +1,57 @@
+:root {
+    color-scheme: light;
+}
+
+html.dark-mode {
+    color-scheme: dark;
+}
+
+html.dark-mode body {
+    background-color: #171310 !important;
+    color: #f1e9dd !important;
+}
+
+html.dark-mode .bg-deepBeige,
+html.dark-mode .bg-darkBeige,
+html.dark-mode .bg-lightBeige {
+    background-color: #2a2320 !important;
+}
+
+html.dark-mode .text-darkBrown {
+    color: #f1e9dd !important;
+}
+
+html.dark-mode .text-accentBrown,
+html.dark-mode .text-lightBeige {
+    color: #d8cbb9 !important;
+}
+
+html.dark-mode [class*="border-darkBrown"] {
+    border-color: rgba(241, 233, 221, 0.28) !important;
+}
+
+html.dark-mode header,
+html.dark-mode footer,
+html.dark-mode article,
+html.dark-mode .policy-card,
+html.dark-mode .bg-white,
+html.dark-mode [class*="bg-lightBeige/"],
+html.dark-mode [class*="bg-deepBeige/"] {
+    background-color: #2a2320 !important;
+}
+
+html.dark-mode input,
+html.dark-mode textarea,
+html.dark-mode select {
+    background-color: #332b27 !important;
+    color: #f1e9dd !important;
+    color-scheme: dark;
+}
+
+html.dark-mode a {
+    color: inherit;
+}
+
+#themeToggle {
+    min-width: 2.5rem;
+}
