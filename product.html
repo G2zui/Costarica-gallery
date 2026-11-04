@@ -70,7 +70,7 @@ async function loadCatalog() {
             images: (item.images && item.images.length) ? item.images : (item.image ? [item.image] : [])
         }]));
     } catch (error) {
-        console.warn('CMS catalog could not be loaded; using fallback data.', error);
+        console.warn('Product catalog data could not be loaded; using fallback data.', error);
         return fallbackCatalog;
     }
 }
@@ -98,5 +98,6 @@ function selectPhoto(src,index) {
 
 initializeProduct();
 </script>
+    <script src="assets/site-content.js" defer></script>
 </body>
 </html>

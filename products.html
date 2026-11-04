@@ -613,12 +613,12 @@
 
         // Initialize App on Load
         window.onload = async function() {
-            await loadCmsProducts();
+            await loadProducts();
             if (document.getElementById('productGrid')) renderProducts(products);
             if (document.getElementById('customImages')) setupFileInputListener();
         };
 
-        async function loadCmsProducts() {
+        async function loadProducts() {
             try {
                 const response = await fetch('content/products.json', { cache: 'no-store' });
                 if (!response.ok) return;
@@ -627,7 +627,7 @@
                     products = data.products;
                 }
             } catch (error) {
-                console.warn('CMS products could not be loaded; using the built-in catalog.', error);
+                console.warn('Product catalog data could not be loaded; using the built-in catalog.', error);
             }
         }
 
@@ -1036,5 +1036,6 @@
             menu.classList.toggle('hidden');
         }
     </script>
+    <script src="assets/site-content.js" defer></script>
 </body>
 </html>
