@@ -265,19 +265,204 @@
     {
       "id": 6,
       "category": "mugs",
-      "nameAr": "مج حراري للسفر والعمل",
-      "nameEn": "Travel Insulated Thermal Mug",
-      "descAr": "حافظ على حرارة مشروبك المفضل طوال اليوم بتصميم فني أنيق.",
-      "descEn": "Keep your favorite drink hot or cold all day with an elegant art design.",
-      "price": 320,
-      "oldPrice": 380,
-      "image": "https://placehold.co/600x600/C4B295/362922?text=Thermal+Mug",
+      "nameAr": "ستانلي ثامبلر",
+      "nameEn": "Stanley Thumbler",
+      "descAr": "ستانلي ثامبلر 1.5 لتر ستانلي ستيل .",
+      "descEn": "Stanley Thumbler 1.5 Liters stainless Steel.",
+      "price": 750,
+      "oldPrice":null,
+      "images": [
+        "mugs/om1.jpeg",
+        "mugs/om2.jpeg",
+        "mugs/om3.jpeg",
+        "mugs/om4.jpeg "
+      ],
+
       "options": [
         {
-          "labelAr": "ستانلس ستيل",
-          "labelEn": "Stainless Steel",
-          "value": "steel"
+          "labelAr": "ازرق",
+          "labelEn": " Blue",
+          "value": " color"
+        },
+         {
+          "labelAr": "بينك",
+          "labelEn": " pink ",
+          "value": " color"
+        },
+         {
+          "labelAr": "بنفسجي",
+          "labelEn": " purple ",
+          "value": " color"
+        },
+         {
+        "labelAr": " بيج ",
+          "labelEn": "Off-White",
+          "value": " color_blue"
         }
+        
+      ]
+    },
+    {
+      "id": 14,
+      "category": "mugs",
+      "nameAr": "مج حراري بتصميم ستانلس ستيل - 359 مل",
+      "nameEn": "SMEG Stainless steel Mug-359ml",
+      "descAr": " مج حراري بتصميم ستانلس ستيل - 359 مل.",
+      "descEn": "SMEG Stainless steel Mug-359ml.",
+      "price": 450,
+      "oldPrice": null,
+      "images": [
+        "mugs/SE1.jpeg",
+        "mugs/SE2.jpeg"
+      ],
+      "options": [
+        {
+          "labelAr": " بيج ",
+          "labelEn": "Off-White",
+          "value": " color"
+        },
+        {
+          "labelAr": "ازرق رمادي",
+          "labelEn": " State Blue",
+          "value": " color"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "category": "mugs",
+      "nameAr": "مج ستانلس ستيل 316 - 350 مل",
+      "nameEn": "316 Stainless Steel Mug-350 ml",
+      "descAr": "مج سيراميك أنيق يمكن تخصيصه بصورة وعبارة مميزة.",
+      "descEn": "An elegant ceramic mug personalized with your favorite photo and phrase.",
+      "price": 600,
+      "oldPrice": null,
+      "images": [
+        "mugs/FO1.jpeg",
+        "mugs/FO2.jpeg",
+        "mugs/FO3.jpeg",
+        "mugs/FO.jpeg"
+      ],
+      "options": [
+        {
+          "labelAr": " اسود ",
+          "labelEn": "Black",
+          "value": " color"
+        },
+        {
+          "labelAr": " بيج ",
+          "labelEn": " off-White", 
+          "value": " color"
+        },
+        {
+          "labelAr": " بنفسجي ",
+          "labelEn": "Purple",
+          "value": " color"
+        },
+        {
+          "labelAr": "  وردي ",
+          "labelEn": " pink ",
+          "value": " color"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "category": "mugs",
+      "nameAr": "  مج ستاربكس بير ",
+      "nameEn": "Starbucks Bear Cup ",
+      "descAr": "  مج ستاربكس بير للمشروبات .",
+      "descEn": " Starbucks Bear Cup For Drink .",
+      "price": 250,
+      "oldPrice": null,
+      "images": [
+        "mugs/BS.jpeg",
+        "mugs/BS1.jpeg",
+        "mugs/BS2.jpeg",
+        "mugs/BS3.jpeg"
+      ]
+    },
+    {
+      "id": 17,
+      "category": "mugs",
+      "nameAr": "مج  حراري ستانلس ستيل",
+      "nameEn": "Stainless Steel  Mug",
+      "descAr": "مج  مزدوج الجدار يحافظ على حرارة المشروبات وتصميمه مناسب للاستخدام اليومي.",
+      "descEn": "A double-wall stainless steel  mug that keeps drinks hot or cold.",
+      "price": 1200,
+      "oldPrice": null,
+      "images": [
+        "mugs/co1.jpeg",
+        "mugs/co2.jpeg",
+        "mugs/co3.jpeg"
+       
+        
+      ],
+      "options": [
+        {
+          "labelAr": "أبيض بنقط سوداء",
+          "labelEn": "White with black polka dots",
+          "value": "white-black-polka",
+          "price": 400
+        },
+        {
+          "labelAr": "أبيض بنقط وردية",
+          "labelEn": "White with pink polka dots",
+          "value": "white-pink-polka",
+          "price": 1200
+        },
+        {
+          "labelAr": "أبيض بنقط حمراء",
+          "labelEn": "White with red polka dots",
+          "value": "white-red-polka",
+          "price": 850
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "category": "mugs",
+      "nameAr": "كوب  حراري ستانلس ستيل يثلاث الوان",
+      "nameEn": " Stainless Steel Cup with 3 colors",
+      "descAr": " كوب  حراري ستانلس ستيل يحفظ الحرارة.",
+      "descEn": "Stainless Steel hot Cup keeps the heat .",
+      "price": 350,
+      "oldPrice": null,
+      "images": [
+        "mugs/cn.jpeg",
+        "mugs/cn1.jpeg",
+        "mugs/cn2.jpeg"
+      ]
+    },
+    {
+      "id": 19,
+      "category": "mugs",
+      "nameAr": "مج حراري ستانلي ستيل ",
+      "nameEn": "Stainless Steel  Mug",
+      "descAr": "مج حراري ستانلي ستيل يحافظ على حرارة المشروبات.",
+      "descEn": "A stylish office mug with a luxurious finish, perfect for desk use or gifting.",
+      "price": 350,
+      "oldPrice": null,
+      "images": [
+        "mugs/mq1.jpeg",
+        "mugs/mq2.jpeg"
+      ]
+    },
+    {
+      "id": 20,
+      "category": "mugs",
+      "nameAr": " مج ستانلس ستيل 316",
+      "nameEn": " 316 stainless Steel Mug",
+      "descAr": "مج فاخر بتصميم هادئ يناسب المكتب والهدايا العملية.",
+      "descEn": "A stylish office mug with a luxurious finish, perfect for desk use or gifting.",
+      "price": 550,
+      "oldPrice": null,
+      "images": [
+        "mugs/31.jpeg",
+        "mugs/32.jpeg",
+        "mugs/33.jpeg",
+        "mugs/34.jpeg"
+       
       ]
     }
   ]

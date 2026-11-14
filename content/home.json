@@ -6,7 +6,12 @@
   "heroButtonAr": "تصفح المنتجات",
   "heroButtonEn": "Browse Products",
   "heroImage": "Logo/costarica-logo-transparent.png",
-  "heroImages": [],
+  "heroImages": [
+    "Necklace/nec1.JPG",
+    "Frames/f1.JPG",
+    "Frames/mm2.jpg",
+    "Frames/l1.JPG"
+  ],
   "announcementAr": "عروض وهدايا مميزة | توصيل سريع لجميع المحافظات | صنع منتجات خاصة حسب طلبكم",
   "announcementEn": "Special offers and gifts | Fast delivery to all governorates | Custom-made products",
   "productsTitleAr": "منتجاتنا",
@@ -15,5 +20,5 @@
   "promotionTitleEn": "Selected products on sale",
   "promotionTextAr": "اكتشف عروضنا المميزة والهدايا المصنوعة خصيصاً لأحبائك.",
   "promotionTextEn": "Discover our special offers and personalized gifts.",
-  "promotionImage": ""
+  "promotionImage": "Frames/bm1.JPG"
 }

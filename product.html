@@ -38,6 +38,7 @@
             <h1 id="productName" class="text-3xl md:text-4xl font-extrabold"></h1>
             <p id="productDescription" class="leading-relaxed text-darkBrown/80"></p>
             <div class="flex items-center gap-3"><strong id="price" class="text-3xl"></strong><span id="oldPrice" class="text-darkBrown/50 line-through"></span></div>
+            <label id="productOptionsLabel" class="hidden font-bold">اختر النوع / Choose type<select id="productOptions" class="block mt-2 w-full rounded-xl border border-darkBrown/30 bg-deepBeige px-4 py-3"></select></label>
             <label class="font-bold">اختر اللون / Choose color<select id="color" class="block mt-2 w-full rounded-xl border border-darkBrown/30 bg-deepBeige px-4 py-3"><option>ذهبي / Gold</option><option>فضي / Silver</option><option>حسب الطلب / Custom</option></select></label>
             <a href="index.html#customize" class="w-full py-4 rounded-2xl bg-darkBrown text-lightBeige text-center font-bold hover:bg-accentBrown transition"><i class="fa-brands fa-whatsapp ms-2"></i> اطلب هذا المنتج / Order this product</a>
         </div>
@@ -45,12 +46,12 @@
 </main>
 <script>
 const fallbackCatalog={
-1:{name:'Stainless Steel Heart Necklace – Customizable',nameAr:'قلادة قلب من الستانلس ستيل قابلة للتخصيص',description:'قلادة قلب أنيقة ومخصصة بتصميم فاخر، متوفرة باللون الذهبي والفضي.',category:'Customize',price:'245 EGP',old:'300 EGP',images:['Necklace/nec1.JPG','Necklace/nec2.JPG','Necklace/nec3.JPG','Necklace/nec4.JPG','Necklace/nec5.JPG','Frames/l1.JPG']},
-2:{name:'Custom Photo Frame',nameAr:'برواز صور مخصص',description:'برواز صور فاخر بتصاميم ومقاسات متعددة تناسب مناسباتك وذكرياتك.',category:'Customize',price:'275 EGP',images:['Frames/l1.JPG','Frames/l2.JPG','Frames/l3.JPG','Frames/l4.JPG','Frames/l5.JPG','Frames/l6.JPG']},
-3:{name:'Custom Art Mug',nameAr:'مج شرب مخصص',description:'مج عالي الجودة بطباعة شخصية ودائمة.',category:'Mugs',price:'180 EGP',old:'220 EGP',images:['Frames/l3.JPG','Frames/l4.JPG','Frames/l5.JPG']},
-4:{name:'Luxury Gift Box',nameAr:'صندوق هدايا فاخر',description:'صندوق هدايا فاخر ومكمل لجميع مناسباتكم.',category:'Box Gift',price:'450 EGP',old:'520 EGP',images:['Frames/l5.JPG','Frames/l6.JPG']},
-5:{name:'Complete Gift Bundle',nameAr:'باندل هدايا متكامل',description:'مجموعة هدايا متكاملة تجمع أجمل قطع Costarica Gallery.',category:'Bundle',price:'850 EGP',old:'1000 EGP',images:['Frames/l1.JPG','Frames/l4.JPG','Frames/l6.JPG']},
-6:{name:'Thermal Travel Mug',nameAr:'مج حراري للسفر',description:'مج حراري أنيق يحافظ على المشروب طوال اليوم.',category:'Mugs',price:'320 EGP',images:['Frames/l2.JPG','Frames/l3.JPG']}
+1:{name:'Stainless Steel Heart Necklace – Customizable',nameAr:'قلادة قلب من الستانلس ستيل قابلة للتخصيص',description:'قلادة قلب أنيقة ومخصصة بتصميم فاخر، متوفرة باللون الذهبي والفضي.',category:'Customize',price:245,old:'300 EGP',images:['Necklace/nec1.JPG','Necklace/nec2.JPG','Necklace/nec3.JPG','Necklace/nec4.JPG','Necklace/nec5.JPG','Frames/l1.JPG']},
+2:{name:'Custom Photo Frame',nameAr:'برواز صور مخصص',description:'برواز صور فاخر بتصاميم ومقاسات متعددة تناسب مناسباتك وذكرياتك.',category:'Customize',price:275,images:['Frames/l1.JPG','Frames/l2.JPG','Frames/l3.JPG','Frames/l4.JPG','Frames/l5.JPG','Frames/l6.JPG']},
+3:{name:'Custom Art Mug',nameAr:'مج شرب مخصص',description:'مج عالي الجودة بطباعة شخصية ودائمة.',category:'Mugs',price:180,old:'220 EGP',images:['Frames/l3.JPG','Frames/l4.JPG','Frames/l5.JPG']},
+4:{name:'Luxury Gift Box',nameAr:'صندوق هدايا فاخر',description:'صندوق هدايا فاخر ومكمل لجميع مناسباتكم.',category:'Box Gift',price:450,old:'520 EGP',images:['Frames/l5.JPG','Frames/l6.JPG']},
+5:{name:'Complete Gift Bundle',nameAr:'باندل هدايا متكامل',description:'مجموعة هدايا متكاملة تجمع أجمل قطع Costarica Gallery.',category:'Bundle',price:850,old:'1000 EGP',images:['Frames/l1.JPG','Frames/l4.JPG','Frames/l6.JPG']},
+6:{name:'Thermal Travel Mug',nameAr:'مج حراري للسفر',description:'مج حراري أنيق يحافظ على المشروب طوال اليوم.',category:'Mugs',price:320,images:['Frames/l2.JPG','Frames/l3.JPG']}
 };
 async function loadCatalog() {
     try {
@@ -65,9 +66,10 @@ async function loadCatalog() {
             description: item.descAr || '',
             descriptionAr: item.descEn || '',
             category: item.category,
-            price: `${item.price} EGP`,
+            price: item.price,
             old: item.oldPrice ? `${item.oldPrice} EGP` : '',
-            images: (item.images && item.images.length) ? item.images : (item.image ? [item.image] : [])
+            images: (item.images && item.images.length) ? item.images : (item.image ? [item.image] : []),
+            options: Array.isArray(item.options) ? item.options : []
         }]));
     } catch (error) {
         console.warn('Product catalog data could not be loaded; using fallback data.', error);
@@ -85,7 +87,24 @@ async function initializeProduct() {
     document.getElementById('productName').textContent = product.nameAr + ' | ' + product.name;
     document.getElementById('productDescription').textContent = product.description;
     document.getElementById('category').textContent = product.category;
-    document.getElementById('price').textContent = product.price;
+    const priceElement = document.getElementById('price');
+    const optionsLabel = document.getElementById('productOptionsLabel');
+    const optionsSelect = document.getElementById('productOptions');
+    const productOptions = Array.isArray(product.options) ? product.options : [];
+    if (productOptions.length) {
+        productOptions.forEach(option => {
+            const optionElement = document.createElement('option');
+            optionElement.value = option.value;
+            optionElement.textContent = option.labelAr;
+            optionElement.dataset.price = option.price || product.price;
+            optionsSelect.append(optionElement);
+        });
+        optionsLabel.classList.remove('hidden');
+        optionsSelect.addEventListener('change', () => {
+            priceElement.textContent = `${optionsSelect.selectedOptions[0].dataset.price} EGP`;
+        });
+    }
+    priceElement.textContent = `${productOptions[0]?.price || product.price} EGP`;
     document.getElementById('oldPrice').textContent = product.old || '';
     document.getElementById('thumbnails').innerHTML = product.images.map((src,index) => `<button onclick="selectPhoto('${src}',${index})" class="aspect-square rounded-lg overflow-hidden border-2 border-transparent thumbnail" data-index="${index}"><img src="${src}" alt="Product photo ${index+1}" class="w-full h-full object-cover"></button>`).join('');
     selectPhoto(product.images[0] || '', 0);
